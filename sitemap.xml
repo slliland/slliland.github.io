@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://slliland.github.io/2023/12/27/poem/</loc>
+    
+    <lastmod>2023-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/photos/images/index.html</loc>
+    
+    <lastmod>2023-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/photos/%E5%8F%A4%E5%85%B8%E5%BB%BA%E7%AD%91/index.html</loc>
+    
+    <lastmod>2023-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/photos/index.html</loc>
+    
+    <lastmod>2023-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/photos/galleryList.json</loc>
+    
+    <lastmod>2023-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://slliland.github.io/2023/12/28/writting/</loc>
     
     <lastmod>2023-12-28</lastmod>
@@ -38,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://slliland.github.io/2023/12/27/poem/</loc>
-    
-    <lastmod>2023-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://slliland.github.io/tags/index.html</loc>
     
     <lastmod>2023-12-27</lastmod>
@@ -74,20 +110,6 @@
 
   
   <url>
-    <loc>https://slliland.github.io/tags/%E8%AF%97%E6%96%87/</loc>
-    <lastmod>2023-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slliland.github.io/tags/%E8%81%82%E9%B2%81%E8%BE%BE/</loc>
-    <lastmod>2023-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://slliland.github.io/tags/%E6%89%98%E7%A6%8F/</loc>
     <lastmod>2023-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -101,17 +123,31 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://slliland.github.io/categories/%E8%AF%97%E6%96%87%E6%9D%82%E9%80%89/</loc>
+    <loc>https://slliland.github.io/tags/%E8%AF%97%E6%96%87/</loc>
     <lastmod>2023-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
+    <loc>https://slliland.github.io/tags/%E8%81%82%E9%B2%81%E8%BE%BE/</loc>
+    <lastmod>2023-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
     <loc>https://slliland.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2023-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/categories/%E8%AF%97%E6%96%87%E6%9D%82%E9%80%89/</loc>
     <lastmod>2023-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
