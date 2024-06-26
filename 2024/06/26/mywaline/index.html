@@ -16,24 +16,25 @@
   <meta name="author" content="宋雨健">
   <meta name="keywords" content="">
   
-    <meta name="description" content="如何解决 github：Permission denied (publickey). fatal: Could not read from remote repository. 该问题主要是Github在本地或服务器上没有生成 SSH KEY 导致的 参考方法：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_28505809&#x2F;article&#x2F;details&#x2F;102717689部分问题解决方法参考">
+    <meta name="description" content="Waline 是在 Valine 的基础上，有简单的后端管理功能的评论模块。 本文在综合多篇博文的基础上，总结了完整的配置流程，当然博主也踩了很多坑，下面简单记录下这段折腾过程。  为什么引入 Waline 评论模块在最早写博客的时候，我使用的是 Utterances 评论模块，该模块配置简单，十分好上手。但是缺点也是明显的：加载较慢、用户需要有自己的 Github 账号、页面不美观等等。最近有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何解决 github：Permission denied (publickey)">
-<meta property="og:url" content="https://slliland.github.io/2024/06/25/permission/index.html">
+<meta property="og:title" content="Hexo 静态网站引入 Waline 评论模块折腾记">
+<meta property="og:url" content="https://slliland.github.io/2024/06/26/mywaline/index.html">
 <meta property="og:site_name" content="宋雨健的个人主页">
-<meta property="og:description" content="如何解决 github：Permission denied (publickey). fatal: Could not read from remote repository. 该问题主要是Github在本地或服务器上没有生成 SSH KEY 导致的 参考方法：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_28505809&#x2F;article&#x2F;details&#x2F;102717689部分问题解决方法参考">
+<meta property="og:description" content="Waline 是在 Valine 的基础上，有简单的后端管理功能的评论模块。 本文在综合多篇博文的基础上，总结了完整的配置流程，当然博主也踩了很多坑，下面简单记录下这段折腾过程。  为什么引入 Waline 评论模块在最早写博客的时候，我使用的是 Utterances 评论模块，该模块配置简单，十分好上手。但是缺点也是明显的：加载较慢、用户需要有自己的 Github 账号、页面不美观等等。最近有">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://slliland.github.io/img/ssh.png">
-<meta property="article:published_time" content="2024-06-25T12:47:15.000Z">
-<meta property="article:modified_time" content="2024-06-26T04:35:03.221Z">
+<meta property="og:image" content="https://slliland.github.io/img/mywaline/mywaline.png">
+<meta property="article:published_time" content="2024-06-26T06:52:16.000Z">
+<meta property="article:modified_time" content="2024-06-26T08:01:39.008Z">
 <meta property="article:author" content="宋雨健">
-<meta property="article:tag" content="Github Permission Denied">
+<meta property="article:tag" content="Waline 设置">
+<meta property="article:tag" content="博客美化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://slliland.github.io/img/ssh.png">
+<meta name="twitter:image" content="https://slliland.github.io/img/mywaline/mywaline.png">
   
   
   
-  <title>如何解决 github：Permission denied (publickey) - 宋雨健的个人主页</title>
+  <title>Hexo 静态网站引入 Waline 评论模块折腾记 - 宋雨健的个人主页</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,13 +232,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/github-logo.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/mywaline/awesomew.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="如何解决 github：Permission denied (publickey)"></span>
+            <span id="subtitle" data-typed-text="Hexo 静态网站引入 Waline 评论模块折腾记"></span>
           
         </div>
 
@@ -248,8 +249,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-25 20:47" pubdate>
-          2024年6月25日 晚上
+        <time datetime="2024-06-26 14:52" pubdate>
+          2024年6月26日 下午
         </time>
       </span>
     
@@ -260,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          2.3k 字
         
       </span>
     
@@ -271,7 +272,7 @@
         
         
         
-          7 分钟
+          15 分钟
         
       </span>
     
@@ -309,38 +310,98 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">如何解决 github：Permission denied (publickey)</h1>
+            <h1 style="display: none">Hexo 静态网站引入 Waline 评论模块折腾记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="如何解决-github：Permission-denied-publickey-fatal-Could-not-read-from-remote-repository"><a href="#如何解决-github：Permission-denied-publickey-fatal-Could-not-read-from-remote-repository" class="headerlink" title="如何解决 github：Permission denied (publickey). fatal: Could not read from remote repository."></a>如何解决 github：Permission denied (publickey). fatal: Could not read from remote repository.</h1><blockquote>
-<p>该问题主要是Github在本地或服务器上没有生成 SSH KEY 导致的</p>
-<p>参考方法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28505809/article/details/102717689">https://blog.csdn.net/qq_28505809/article/details/102717689</a><br>部分问题解决方法参考：<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/how-to-fix-could-not-open-a-connection-to-your-authentication-agent-in-git/">https://www.geeksforgeeks.org/how-to-fix-could-not-open-a-connection-to-your-authentication-agent-in-git/</a></p>
+                <blockquote>
+<p>Waline 是在 Valine 的基础上，有简单的后端管理功能的评论模块。</p>
+<p>本文在综合多篇博文的基础上，总结了完整的配置流程，当然博主也踩了很多坑，下面简单记录下这段折腾过程。</p>
 </blockquote>
-<h1 id="查看是否有文件-id-rsa-id-rsa-pub"><a href="#查看是否有文件-id-rsa-id-rsa-pub" class="headerlink" title="查看是否有文件 id_rsa id_rsa.pub"></a>查看是否有文件 id_rsa id_rsa.pub</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh<br><span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure>
-<p>此时应显示 id_rsa id_rsa.pub</p>
-<h1 id="生成新的-SSH-KEY"><a href="#生成新的-SSH-KEY" class="headerlink" title="生成新的 SSH KEY"></a>生成新的 SSH KEY</h1><p>如果有文件 id_rsa id_rsa.pub，也可以进行以下操作，覆盖过去的 KEY。<br>输入命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C 你的邮箱地址<br></code></pre></td></tr></table></figure>
-<p>随后可能有输密码、设置密码等操作，为避免麻烦，可以选择一直按回车，最终生成新的 SSH KEY。</p>
-<h1 id="配置新的-SSH-KEY"><a href="#配置新的-SSH-KEY" class="headerlink" title="配置新的 SSH KEY"></a>配置新的 SSH KEY</h1><p>完成上一步操作后，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-v git@github.com<br></code></pre></td></tr></table></figure>
-<p>此时没有authentication methods，最后一行仍会显示：Permission denied (publickey).<br>随后输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-agent -s<br></code></pre></td></tr></table></figure>
-<p>以上操作回现实SOCK、PID等信息，最后一行会显示：echo Agent pid XXXXX;<br>接着输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure>
-<p>此时若顺利，会显示：Identity added…<br>若出现错误提示：Could not open a connection to your authentication agent.<br>你需要执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">eval</span> <span class="hljs-string">&quot;<span class="hljs-subst">$(ssh-agent -s)</span>&quot;</span><br></code></pre></td></tr></table></figure>
-<p>随后再去执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-add ~/.ssh/id_rsa<br></code></pre></td></tr></table></figure>
-<p>此时不会再次报错，问题解决。</p>
-<h1 id="将新的-SSH-KEY-添加到你的-Github"><a href="#将新的-SSH-KEY-添加到你的-Github" class="headerlink" title="将新的 SSH KEY 添加到你的 Github"></a>将新的 SSH KEY 添加到你的 Github</h1><p>在进行完上面的操作后，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> id_rsa.pub<br></code></pre></td></tr></table></figure>
-<p>复制其中的内容，进入 Github 账号，在 settings 目录下，点击 SSH and GPG keys，随后点击右上角 New SSH key。<br>输入任意 title，随后将复制的内容粘贴到 key 中。</p>
-<p>Add SSH KEY。<br><img src="/img/pic1.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="验证是否添加成功"><a href="#验证是否添加成功" class="headerlink" title="验证是否添加成功"></a>验证是否添加成功</h1><p>在终端输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-<p>提示有 Hi xxx！开头，说明已经添加成功了。</p>
+<h1 id="为什么引入-Waline-评论模块"><a href="#为什么引入-Waline-评论模块" class="headerlink" title="为什么引入 Waline 评论模块"></a>为什么引入 Waline 评论模块</h1><p>在最早写博客的时候，我使用的是 Utterances 评论模块，该模块配置简单，十分好上手。但是缺点也是明显的：加载较慢、用户需要有自己的 Github 账号、页面不美观等等。最近有了些闲暇时间，看到 Waline 评论模块能解决 Utterances 的部分问题，同时也想学习一下 Vercel，故想在自己的博客上部署该功能。</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p>Waline 有自己的官方文档：<a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started/%EF%BC%8C%E4%B8%8A%E9%9D%A2%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E4%BA%86%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95%EF%BC%8C%E9%9D%9E%E5%B8%B8%E5%80%BC%E5%BE%97%E5%8F%82%E8%80%83%E3%80%82">https://waline.js.org/guide/get-started/，上面详细介绍了配置方法，非常值得参考。</a></p>
+<h1 id="LeanCloud-配置"><a href="#LeanCloud-配置" class="headerlink" title="LeanCloud 配置"></a>LeanCloud 配置</h1><p>首先要配置 LeanCloud，可以选择国内版和国际版两种配置方案。国内版较为繁琐，需要实名认证、备案、域名绑定等等。而国际版只需要邮箱注册即可。所以以下我都是选择国际版的配置路线。</p>
+<ol>
+<li>创建应用：注册账户、登陆之后，进行创建应用操作。</li>
+</ol>
+<p><img src="/img/mywaline/waline_1.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>获取后续需要的值</li>
+</ol>
+<p>创建完成后进入控制台的「设置」→「应用 Keys」界面。将 <em>AppID、AppKey、MasterKey</em> 这三个值记下来，注意不要暴露给别人。</p>
+<p><img src="/img/mywaline/waline_2.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Vercel-配置"><a href="#Vercel-配置" class="headerlink" title="Vercel 配置"></a>Vercel 配置</h1><ol>
+<li>首先是注册 Vercel 账户，用 GitHub 账户注册即可。然后使用开发者提供的<a target="_blank" rel="noopener" href="https://vercel.com/new/sllilands-projects/clone?repository-url=https://github.com/lizheming/waline/tree/master/example">快速部署链接</a>，直接将开发者的 Waline 仓库 Clone 到 Vercel 新创建的项目中。项目名称随意填写一个即可，我写的是 blog-chat。</li>
+</ol>
+<p><img src="/img/mywaline/waline_3.png" srcset="/img/loading.gif" lazyload></p>
+<p>此时 Vercel 会基于 Waline 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名。</p>
+<p><img src="/img/mywaline/waline_4.png" srcset="/img/loading.gif" lazyload></p>
+<p>一两分钟后，满屏的烟花会庆祝你部署成功。此时点击 Go to Dashboard 可以跳转到应用的控制台。</p>
+<p><img src="/img/mywaline/waline_5.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>下一步，点击顶部的 Settings - Environment Variables 进入环境变量配置页，并需要配置 <em>LEAN_ID、LEAN_KEY</em> 和 <em>LEAN_MASTER_KEY</em> 三个环境变量。它们的值分别对应在 LeanCloud 中获得的 <em>AppID</em>、<em>AppKey</em> 和 <em>MasterKey</em>。</li>
+</ol>
+<p><img src="/img/mywaline/waline_6.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="3">
+<li>环境变量配置完成之后点击顶部的 Deployments 点击顶部最新的一次部署右侧的 Redeploy 按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效。</li>
+</ol>
+<p><img src="/img/mywaline/waline_7.png" srcset="/img/loading.gif" lazyload></p>
+<p>此时会跳转到 Overview 界面开始部署，等待片刻后 STATUS 会变成 Ready。此时请点击 Visit ，即可跳转到部署好的网站地址，此地址即为你的服务端地址。</p>
+<p><img src="/img/mywaline/waline_8.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong><font color=Red>注意！！</font></strong></p>
+<p><strong>Vercel 的 app 后缀的地址不能直接使用，因为：LeanCloud国际版宣布 2022 年 8 月起，国际版共享域名不再向中国大陆提供服务；<br>Vercel 的部署域名 vercel.app 因为众所周知的原因，无法在国内访问了。</strong></p>
+<p>所以如果你有国内备案的域名的话，比如从阿里云、腾讯云购买的域名，可以选择直接在 Vercel 上部署。</p>
+<p>部署方式也比较简单：</p>
+<ol>
+<li>在你的 Vercel 中找到 Waline 的项目，打开Settings(设置)选项卡</li>
+</ol>
+<p>在左侧菜单打开 Domains(域)，填写要绑定的域名，然后按如下方式进行添加。</p>
+<p><img src="/img/mywaline/waline_9.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>配置 DNS</li>
+</ol>
+<p>在你的域名的 DNS 服务器中，按如下方式添加记录（以阿里云 DNS 服务为例）：</p>
+<table>
+<thead>
+<tr>
+<th>记录类型</th>
+<th>主机记录</th>
+<th>记录值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CNAME</td>
+<td>example</td>
+<td>cname.vercel-dns.com</td>
+</tr>
+</tbody></table>
+<p>记录类型和记录值尽量不要改，主机记录即为在上一步中，在你的域名前填写的值（我填写的是examole）。</p>
+<ol start="3">
+<li><p>重新部署应用</p>
+</li>
+<li><p>在 Vercel 上重新部署你之前配置好的应用，随后点击你的域名重定向的链接，若出现评论模块，则说明配置成功。复制该网址。</p>
+</li>
+</ol>
+<p><img src="/img/mywaline/waline_10.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="在-Hexo-中部署-waline"><a href="#在-Hexo-中部署-waline" class="headerlink" title="在 Hexo 中部署 waline"></a>在 Hexo 中部署 waline</h1><p>该部分与使用的 Hexo 主题有一定关系。我使用的是 Fluid 主题。</p>
+<ol>
+<li>首先，在 themes 目录下（而不是根目录），找到 _config.yml，在评论插件设置板块，修改 enable、type值，如下所示。</li>
+</ol>
+<p><img src="/img/mywaline/waline_11.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="2">
+<li>随后，找到下面的评论插件中，waline 的位置，修改相关配置。</li>
+</ol>
+<p>我的配置为：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">waline:</span><br>  <span class="hljs-attr">serverURL:</span> <span class="hljs-string">&#x27;https://example.xxx.com/&#x27;</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredMeta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>]<br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">emoji:</span> [<span class="hljs-string">&#x27;https://unpkg.com/@waline/emojis@1.2.0/tw-emoji&#x27;</span>,<span class="hljs-string">&#x27;https://unpkg.com/@waline/emojis@1.2.0/weibo&#x27;</span>]<br>  <span class="hljs-attr">dark:</span> <span class="hljs-string">&#x27;html[data-user-color-scheme=&quot;dark&quot;]&#x27;</span><br>  <span class="hljs-attr">wordLimit:</span> <span class="hljs-number">0</span><br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br>  <span class="hljs-attr">locale:</span><br>    <span class="hljs-attr">placeholder:</span> <span class="hljs-string">欢迎加入讨论，让我们的评论区热闹起来！🎈</span> <span class="hljs-string">~</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Fluid 原作者给出的 waline 的 js 文件链接失效，导致按以上过程配置后，仍会出现在检查元素时，会出现 waline，但在网页中显示不出来的情况。</li>
+</ol>
+<p>此时，需要修改 themes 目录下， _config.yml 的最下面的”配置 JS CSS 等静态资源的 URL 前缀”部分</p>
+<p><img src="/img/mywaline/waline_12.png" srcset="/img/loading.gif" lazyload></p>
+<p>此处我参考 waline 的 issue 中的回答，修改为 2.13.0 版本，评论模块加载成功！</p>
+<p><img src="/img/mywaline/waline_13.png" srcset="/img/loading.gif" lazyload title="大功告成"></p>
 
                 
               </div>
@@ -359,7 +420,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/github%E4%BD%BF%E7%94%A8/" class="category-chain-item">github使用</a>
+  <a href="/categories/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/" class="category-chain-item">博客配置</a>
   
   
 
@@ -374,7 +435,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Github-Permission-Denied/">#Github Permission Denied</a>
+        <a href="/tags/Waline-%E8%AE%BE%E7%BD%AE/">#Waline 设置</a>
+      
+        <a href="/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/">#博客美化</a>
       
     </div>
   
@@ -386,8 +449,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>如何解决 github：Permission denied (publickey)</div>
-      <div>https://slliland.github.io/2024/06/25/permission/</div>
+      <div>Hexo 静态网站引入 Waline 评论模块折腾记</div>
+      <div>https://slliland.github.io/2024/06/26/mywaline/</div>
     </div>
     <div class="license-meta">
       
@@ -399,7 +462,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月25日</div>
+          <div>2024年6月26日</div>
         </div>
       
       
@@ -431,18 +494,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/26/mywaline/" title="Hexo 静态网站引入 Waline 评论模块折腾记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo 静态网站引入 Waline 评论模块折腾记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/28/writting/" title="托福学术写作练笔">
-                        <span class="hidden-mobile">托福学术写作练笔</span>
+                      <a href="/2024/06/25/permission/" title="如何解决 github：Permission denied (publickey)">
+                        <span class="hidden-mobile">如何解决 github：Permission denied (publickey)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

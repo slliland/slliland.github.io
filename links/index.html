@@ -337,29 +337,26 @@
 
   <article id="comments" lazyload>
     
+  <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#comments', function() {
-      var light = 'github-light';
-      var dark = 'github-dark';
-      var schema = document.documentElement.getAttribute('data-user-color-scheme');
-      if (schema === 'dark') {
-        schema = dark;
-      } else {
-        schema = light;
-      }
-      window.UtterancesThemeLight = light;
-      window.UtterancesThemeDark = dark;
-      var s = document.createElement('script');
-      s.setAttribute('src', 'https://utteranc.es/client.js');
-      s.setAttribute('repo', 'slliland/slliland.github.io');
-      s.setAttribute('issue-term', 'pathname');
-      
-      s.setAttribute('label', 'utterances');
-      
-      s.setAttribute('theme', schema);
-      s.setAttribute('crossorigin', 'anonymous');
-      document.getElementById('comments').appendChild(s);
-    })
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.13.0/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.13.0/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://example.sjiqiqo.asia/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://unpkg.com/@waline/emojis@1.2.0/tw-emoji","https://unpkg.com/@waline/emojis@1.2.0/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"locale":{"placeholder":"欢迎加入讨论，让我们的评论区热闹起来！🎈 ~","reaction":true,"emoji":"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"}},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
   </script>
   <noscript>Please enable JavaScript to view the comments</noscript>
 

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://slliland.github.io/2024/06/26/mywaline/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://slliland.github.io/2024/06/25/permission/</loc>
     
     <lastmod>2024-06-26</lastmod>
@@ -128,21 +137,21 @@
 
   
   <url>
+    <loc>https://slliland.github.io/tags/Waline-%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://slliland.github.io/tags/Github-Permission-Denied/</loc>
-    <lastmod>2024-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slliland.github.io/tags/%E8%AF%97%E6%96%87/</loc>
-    <lastmod>2024-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://slliland.github.io/tags/%E8%81%82%E9%B2%81%E8%BE%BE/</loc>
     <lastmod>2024-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -162,7 +171,28 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://slliland.github.io/tags/%E8%AF%97%E6%96%87/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://slliland.github.io/tags/%E8%81%82%E9%B2%81%E8%BE%BE/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://slliland.github.io/categories/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://slliland.github.io/categories/github%E4%BD%BF%E7%94%A8/</loc>
@@ -172,14 +202,14 @@
   </url>
   
   <url>
-    <loc>https://slliland.github.io/categories/%E8%AF%97%E6%96%87%E6%9D%82%E9%80%89/</loc>
+    <loc>https://slliland.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://slliland.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://slliland.github.io/categories/%E8%AF%97%E6%96%87%E6%9D%82%E9%80%89/</loc>
     <lastmod>2024-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
